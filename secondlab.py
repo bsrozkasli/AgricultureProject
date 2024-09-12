@@ -17,9 +17,15 @@ monthly_avg.plot(kind='bar', color='skyblue')
 plt.title('Average Max Temperature by Month')
 plt.xlabel('Month')
 plt.ylabel('Temperature (Celsius)')
+
+# Boxplot by month to show seasonality and variability
+
+weather_data['Month'] = weather_data.index.month
+weather_data.boxplot(column='TMAX', by='Month', figsize=(10,6))
+plt.title('Temperature Distribution by Month')
+plt.xlabel('Month')
+plt.ylabel('Temperature (Celsius)')
+plt.suptitle('')  # Suppress automatic title to avoid duplication
+
+
 plt.show()
-
-
-
-
-
